@@ -4,17 +4,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatButtonModule } from "@angular/material/button";
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatDialogModule } from "@angular/material/dialog";
+import { AlertComponent } from './components/alert/alert.component';
+import { HeroService } from "./services/hero.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MatButtonModule,
+    HttpClientModule,
+    MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    HeroService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

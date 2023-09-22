@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>{{data.uuid ? 'Edit' : 'Create new'}} hero</h1>
+<!--<ng-container *ngIf="form">-->
+
+<!--</ng-container>-->
+<mat-dialog-content
+     [formGroup]="form">
+<!--  <mat-list>-->
+<!--    <mat-list-item><b>Name:</b> {{data.nameLabel}}</mat-list-item>-->
+<!--    <mat-list-item><b>Gender:</b> {{data.genderLabel}}</mat-list-item>-->
+<!--    <mat-list-item><b>Citizenship:</b> {{data.citizenshipLabel}}</mat-list-item>-->
+<!--    <mat-list-item><b>Skills:</b> {{data.skillsLabel}}</mat-list-item>-->
+<!--    <mat-list-item><b>Occupation:</b> {{data.occupationLabel}}</mat-list-item>-->
+<!--    <mat-list-item><b>MemberOf:</b> {{data.memberOfLabel}}</mat-list-item>-->
+<!--    <mat-list-item><b>Creator:</b> {{data.creatorLabel}}</mat-list-item>-->
+<!--  </mat-list>-->
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput
+           formControlName="nameLabel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Gender</mat-label>
+    <input matInput
+           formControlName="genderLabel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Citizenship</mat-label>
+    <input matInput
+           formControlName="citizenshipLabel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Skills</mat-label>
+    <input matInput
+           formControlName="skillsLabel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Occupation</mat-label>
+    <input matInput
+           formControlName="occupationLabel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>MemberOf</mat-label>
+    <input matInput
+           formControlName="memberOfLabel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Creator</mat-label>
+    <input matInput
+           formControlName="creatorLabel">
+  </mat-form-field>
+
+
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-button
+          (click)="onNoClick()">Close
+  </button>
+  <button mat-button
+          cdkFocusInitial
+          (click)="onSave()">
+    Save
+  </button>
+</div>

@@ -11,21 +11,22 @@ import { AlertComponent } from './components/alert/alert.component';
 import { HeroService } from "./services/hero.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AlertComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatDialogModule,
-  ],
-  providers: [
-    HeroService,
-  ],
-  bootstrap: [AppComponent]
+        declarations: [
+                AppComponent,
+                AlertComponent,
+        ],
+        imports: [
+                BrowserModule,
+                BrowserAnimationsModule,
+                AppRoutingModule,
+                MatButtonModule,
+                HttpClientModule,
+                MatDialogModule,
+        ],
+        providers: [
+                HeroService,
+        ],
+        bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

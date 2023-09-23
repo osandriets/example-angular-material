@@ -1,4 +1,5 @@
 <!--{{sortedData() | async | json}}-->
+<!--<app-chart></app-chart>-->
 
 <ng-container *ngIf="{
 items: data$ | async,
@@ -7,13 +8,13 @@ sort: data$ | async
 <!--  {{data | json}}-->
 
 <!--  {{data | json}}-->
-  <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput
-           placeholder="Ex. ium"
-           #input
-           (keyup)="applyFilter($event)" >
-  </mat-form-field>
+<!--  <mat-form-field>-->
+<!--    <mat-label>Filter</mat-label>-->
+<!--    <input matInput-->
+<!--           placeholder="Ex. ium"-->
+<!--           #input-->
+<!--           (keyup)="applyFilter($event)" >-->
+<!--  </mat-form-field>-->
 
   <div class="mb-24">
     <button mat-raised-button
@@ -33,6 +34,10 @@ sort: data$ | async
          class="mat-elevation-z8">
 
     <!-- Position Column -->
+    <ng-container matColumnDef="nameLabelD">
+      <th mat-header-cell *matHeaderCellDef> Name of the item purchased </th>
+    </ng-container>
+
     <ng-container matColumnDef="nameLabel">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
         Name
@@ -42,6 +47,12 @@ sort: data$ | async
     </ng-container>
 
     <!-- Name Column -->
+    <ng-container matColumnDef="genderLabelD">
+      <th mat-header-cell *matHeaderCellDef>
+        <app-chart></app-chart>
+      </th>
+    </ng-container>
+
     <ng-container matColumnDef="genderLabel">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
         Gender
@@ -57,6 +68,12 @@ sort: data$ | async
     </ng-container>
 
     <!-- Weight Column -->
+    <ng-container matColumnDef="citizenshipLabelD">
+      <th mat-header-cell *matHeaderCellDef>
+        <app-chart></app-chart>
+      </th>
+    </ng-container>
+
     <ng-container matColumnDef="citizenshipLabel">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
         Citizenship
@@ -65,6 +82,12 @@ sort: data$ | async
     </ng-container>
 
     <!-- Symbol Column -->
+    <ng-container matColumnDef="skillsLabelD">
+      <th mat-header-cell *matHeaderCellDef>
+        <app-chart></app-chart>
+      </th>
+    </ng-container>
+
     <ng-container matColumnDef="skillsLabel">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
         Skills
@@ -73,6 +96,12 @@ sort: data$ | async
     </ng-container>
 
     <!-- Symbol Column -->
+    <ng-container matColumnDef="occupationLabelD">
+      <th mat-header-cell *matHeaderCellDef>
+        <app-chart></app-chart>
+      </th>
+    </ng-container>
+
     <ng-container matColumnDef="occupationLabel">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
         Occupation
@@ -81,6 +110,12 @@ sort: data$ | async
     </ng-container>
 
     <!-- Symbol Column -->
+    <ng-container matColumnDef="memberOfLabelD">
+      <th mat-header-cell *matHeaderCellDef>
+        <app-chart></app-chart>
+      </th>
+    </ng-container>
+
     <ng-container matColumnDef="memberOfLabel">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
         Member Of
@@ -89,6 +124,12 @@ sort: data$ | async
     </ng-container>
 
     <!-- Symbol Column -->
+    <ng-container matColumnDef="creatorLabelD">
+      <th mat-header-cell *matHeaderCellDef>
+        <app-chart></app-chart>
+      </th>
+    </ng-container>
+
     <ng-container matColumnDef="creatorLabel">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
         Creator
@@ -97,6 +138,10 @@ sort: data$ | async
     </ng-container>
 
     <!-- Symbol Column -->
+    <ng-container matColumnDef="actionsD">
+      <th mat-header-cell *matHeaderCellDef> Name of the item purchased </th>
+    </ng-container>
+
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>
         Actions
@@ -118,6 +163,8 @@ sort: data$ | async
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsD"></tr>
+
     <tr mat-row
         *matRowDef="let row; columns: displayedColumns;"
         class="cursor-pointer"

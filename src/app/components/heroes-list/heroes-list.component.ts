@@ -14,19 +14,24 @@ import { async, BehaviorSubject, combineLatest, map, Observable, Subject } from 
 import { HeroService } from "../../services/hero.service";
 import { AsyncPipe, JsonPipe, NgIf } from "@angular/common";
 import { MatInputModule } from "@angular/material/input";
+import { ChartModule } from "../chart/chart.module";
 
 @Component({
   selector: 'app-heroes-list',
   templateUrl: './heroes-list.component.html',
   styleUrls: ['./heroes-list.component.scss'],
   standalone: true,
-  imports: [MatTableModule, MatSortModule, MatChipsModule, MatButtonModule, MatIconModule, NgIf, AsyncPipe, JsonPipe, MatInputModule],
+  imports: [
+    MatTableModule, MatSortModule, MatChipsModule, MatButtonModule,
+    MatIconModule, NgIf, AsyncPipe, JsonPipe, MatInputModule, ChartModule,
+  ],
 })
 export class HeroesListComponent {
   data$!: Observable<HeroInterface[]>;
   dataSource: any;
   // sortt = {active: 'genderLabel', direction: 'asc'};
   displayedColumns: string[] = ['nameLabel', 'genderLabel', 'citizenshipLabel', 'skillsLabel', 'occupationLabel', 'memberOfLabel', 'creatorLabel', 'actions'];
+  displayedColumnsD: string[] = ['nameLabelD', 'genderLabelD', 'citizenshipLabelD', 'skillsLabelD', 'occupationLabelD', 'memberOfLabelD', 'creatorLabelD', 'actionsD'];
   matSortActive: string = "nameLabel";
   matSortDirection: SortDirection = "asc";
 

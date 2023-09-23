@@ -6,7 +6,6 @@ import { MatChipsModule } from "@angular/material/chips";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDialog } from "@angular/material/dialog";
 import { HeroDetailsComponent } from "../hero-details/hero-details.component";
-import { HeroInterface } from "../../interfaces/heroInterface";
 import { MatIconModule } from "@angular/material/icon";
 import { AlertComponent } from "../alert/alert.component";
 import { HeroEditComponent } from "../hero-edit/hero-edit.component";
@@ -15,6 +14,7 @@ import { HeroService } from "../../services/hero.service";
 import { AsyncPipe, JsonPipe, NgIf } from "@angular/common";
 import { MatInputModule } from "@angular/material/input";
 import { ChartModule } from "../chart/chart.module";
+import { HeroInterface } from "../../interfaces/hero.interface";
 
 @Component({
   selector: 'app-heroes-list',
@@ -29,9 +29,8 @@ import { ChartModule } from "../chart/chart.module";
 export class HeroesListComponent {
   data$!: Observable<HeroInterface[]>;
   dataSource: any;
-  // sortt = {active: 'genderLabel', direction: 'asc'};
   displayedColumns: string[] = ['nameLabel', 'genderLabel', 'citizenshipLabel', 'skillsLabel', 'occupationLabel', 'memberOfLabel', 'creatorLabel', 'actions'];
-  displayedColumnsD: string[] = ['nameLabelD', 'genderLabelD', 'citizenshipLabelD', 'skillsLabelD', 'occupationLabelD', 'memberOfLabelD', 'creatorLabelD', 'actionsD'];
+  displayedColumnsChart: string[] = ['nameLabelChart', 'genderLabelChart', 'citizenshipLabelChart', 'skillsLabelChart', 'occupationLabelChart', 'memberOfLabelChart', 'creatorLabelChart', 'actionsChart'];
   matSortActive: string = "nameLabel";
   matSortDirection: SortDirection = "asc";
 
@@ -43,11 +42,10 @@ export class HeroesListComponent {
   @ViewChild(MatTable) table!: MatTable<HeroInterface>;
 
   constructor(public dialog: MatDialog,
-              private heroService: HeroService,
-              private _liveAnnouncer: LiveAnnouncer) {
+              private heroService: HeroService,) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.heroService.load();
     // this.data$ = this.heroService.data$;
 
@@ -73,18 +71,7 @@ export class HeroesListComponent {
     });
   }
 
-  onSortData(sort: Sort) {
-    console.error('Sort', sort);
-
-    // if (sort.direction) {
-    //   this._liveAnnouncer.announce(`Sorted ${sort.direction}ending`);
-    // } else {
-    //   this._liveAnnouncer.announce('Sorting cleared');
-    // }
-    //
-    // this.matSortActive = sort.active;
-    // this.matSortDirection = sort.direction;
-
+  onSortData(sort: Sort): void {
     this._sort.next(sort);
   }
 

@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from "rxjs";
-import { HeroInterface } from "../interfaces/heroInterface";
 import { v4 as uuidv4 } from 'uuid';
+import { HeroInterface } from "../interfaces/hero.interface";
 
 @Injectable()
 export class HeroService {
   private _data: Subject<HeroInterface[]> = new Subject();
-  private data: HeroInterface[] = [];
+
   data$: Observable<HeroInterface[]> = this._data.asObservable();
 
-
   private URL = '../assets/query.json';
+  private data: HeroInterface[] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -19,21 +19,18 @@ export class HeroService {
   load(): void {
     this.http.get<HeroInterface[]>(this.URL)
       .subscribe((d)=> {
-      console.log('i', d)
         this.data = d.map(i => ({
           ...i,
           uuid: uuidv4(),
         }))
 
-        this._data.next(this.data as HeroInterface[]);
+        this._data.next(this.data);
     });
   }
 
   delete(uuid: string): void {
-    console.error('delete', uuid);
     this.data = this.data.filter((d: HeroInterface) => d.uuid !== uuid);
-    this._data.next(this.data as HeroInterface[]);
-
+    this._data.next(this.data);
   }
 
   add(result: HeroInterface): void {
@@ -50,14 +47,11 @@ export class HeroService {
   }
 
   edit(result: HeroInterface): void {
-    console.error('edit', result);
-
-    this.data = this.data.map(i => {
-      return i.uuid !== result.uuid ? i : result;
+    this.data = this.data.map((d: HeroInterface) => {
+      return d.uuid !== result.uuid ? d : result;
     });
 
-    this._data.next(this.data as HeroInterface[]);
-
+    this._data.next(this.data);
   }
 
 }

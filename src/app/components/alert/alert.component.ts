@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { HeroInterface } from "../../interfaces/heroInterface";
+import { HeroInterface } from "../../interfaces/hero.interface";
 
 @Component({
   selector: 'app-alert',

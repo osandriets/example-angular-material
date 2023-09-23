@@ -1,0 +1,18 @@
+<div #svgContainer
+     class="svgWrapper">
+  <svg>
+    <g [attr.transform]="'translate(0, 0)'"
+       class="g-main">
+      <g class="g-bars">
+        <g *ngFor="let bar of bars"
+           class="g-bar">
+          <rect [attr.x]="bar?.x"
+                [attr.y]="bar?.y"
+                [attr.width]="bar?.width"
+                [attr.height]="bar?.height"
+                class="bar"/>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>

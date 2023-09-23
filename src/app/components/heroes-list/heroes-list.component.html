@@ -1,23 +1,7 @@
-<!--{{sortedData() | async | json}}-->
-<!--<app-chart></app-chart>-->
-
-
-<!--<app-pie-chart></app-pie-chart>-->
-
 <ng-container *ngIf="{
-items: data$ | async,
-sort: data$ | async
+  items: data$ | async,
+  sort: data$ | async
 } as data">
-<!--  {{data | json}}-->
-
-<!--  {{data | json}}-->
-<!--  <mat-form-field>-->
-<!--    <mat-label>Filter</mat-label>-->
-<!--    <input matInput-->
-<!--           placeholder="Ex. ium"-->
-<!--           #input-->
-<!--           (keyup)="applyFilter($event)" >-->
-<!--  </mat-form-field>-->
 
   <div class="mb-24">
     <button mat-raised-button
@@ -26,176 +10,195 @@ sort: data$ | async
     </button>
   </div>
 
-  <!--{{data$ | async}}-->
   <table [dataSource]="data.items || []"
-         mat-table
-         matSort
          [matSortActive]="matSortActive"
          [matSortDirection]="matSortDirection"
+         mat-table
+         matSort
          matSortDisableClear
-         (matSortChange)="onSortData($event)"
-         class="mat-elevation-z8">
+         class="mat-elevation-z8"
+         (matSortChange)="onSortData($event)">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="nameLabelD">
-      <th mat-header-cell *matHeaderCellDef>
-        <app-bar-chart [data]="[
-            {
-      id: 1,
-      x: '1 Minute Ago',
-      y: 1
-    },
-    {
-      id: 2,
-      x: '5 Minute Ago',
-      y: 20
-    }
-        ]"
-        ></app-bar-chart>
+    <!-- Name Column -->
+    <ng-container matColumnDef="nameLabelChart">
+      <th *matHeaderCellDef
+          mat-header-cell>
+        <app-chart *ngIf="data.items?.length"
+                   [data]="data.items || []"
+                   field="nameLabel"></app-chart>
       </th>
     </ng-container>
 
     <ng-container matColumnDef="nameLabel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      <th *matHeaderCellDef
+          mat-header-cell
+          mat-sort-header
+          sortActionDescription="Sort by name">
         Name
       </th>
-      <td mat-cell *matCellDef="let element">
-        {{element.nameLabel}} </td>
+      <td *matCellDef="let element"
+          mat-cell>
+        {{element.nameLabel}}
+      </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="genderLabelD">
-      <th mat-header-cell *matHeaderCellDef>
-<!--        <app-chart [data]="data"-->
-<!--                   field="genderLabelD"></app-chart>-->
-          <app-bar-chart [data]="[
-            {
-      x: '1 Minute Ago',
-      y: 7
-    },
-    {
-      x: '5 Minute Ago',
-      y: 3
-    }
-        ]"
-          ></app-bar-chart>
+    <!-- Gender Column -->
+    <ng-container matColumnDef="genderLabelChart">
+      <th *matHeaderCellDef
+          mat-header-cell>
+        <app-chart *ngIf="data.items?.length"
+                   [data]="data.items || []"
+                   field="genderLabel"></app-chart>
       </th>
     </ng-container>
 
     <ng-container matColumnDef="genderLabel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      <th *matHeaderCellDef
+          mat-header-cell
+          mat-sort-header
+          sortActionDescription="Sort by gender">
         Gender
       </th>
-      <td mat-cell *matCellDef="let element">
-        <mat-chip-listbox aria-label="Fish selection">
-
-          <mat-chip color="primary">
-            {{element.genderLabel}}
-          </mat-chip>
-        </mat-chip-listbox>
+      <td *matCellDef="let element"
+          mat-cell>
+        {{element.genderLabel}}
       </td>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="citizenshipLabelD">
-      <th mat-header-cell *matHeaderCellDef>
-<!--        <app-chart [data]="data"-->
-<!--                   field="citizenshipLabelD"></app-chart>-->
-          <app-pie-chart [data]="[
-            {
-      x: '1 Minute Ago',
-      y: 7
-    },
-    {
-      x: '5 Minute Ago',
-      y: 3
-    }
-        ]"></app-pie-chart>
+    <!-- Citizenship Column -->
+    <ng-container matColumnDef="citizenshipLabelChart">
+      <th *matHeaderCellDef
+          mat-header-cell>
+        <app-chart *ngIf="data.items?.length"
+                   [data]="data.items || []"
+                   field="citizenshipLabel"></app-chart>
       </th>
     </ng-container>
 
     <ng-container matColumnDef="citizenshipLabel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+      <th *matHeaderCellDef
+          mat-header-cell
+          mat-sort-header
+          sortActionDescription="Sort by Citizenship">
         Citizenship
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.citizenshipLabel}} </td>
+      <td *matCellDef="let element"
+          mat-cell>
+        {{element.citizenshipLabel}}
+      </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="skillsLabelD">
-      <th mat-header-cell *matHeaderCellDef>
-<!--        <app-chart></app-chart>-->
+    <!-- Skills Column -->
+    <ng-container matColumnDef="skillsLabelChart">
+      <th *matHeaderCellDef
+          mat-header-cell>
+        <app-chart *ngIf="data.items?.length"
+                   [data]="data.items || []"
+                   field="skillsLabel"></app-chart>
       </th>
     </ng-container>
 
     <ng-container matColumnDef="skillsLabel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      <th *matHeaderCellDef
+          mat-header-cell
+          mat-sort-header
+          sortActionDescription="Sort by skills">
         Skills
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.skillsLabel}} </td>
+      <td mat-cell *matCellDef="let element">
+        {{element.skillsLabel}}
+      </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="occupationLabelD">
-      <th mat-header-cell *matHeaderCellDef>
-<!--        <app-chart></app-chart>-->
+    <!-- Occupation Column -->
+    <ng-container matColumnDef="occupationLabelChart">
+      <th *matHeaderCellDef
+          mat-header-cell>
+        <app-chart *ngIf="data.items?.length"
+                   [data]="data.items || []"
+                   field="occupationLabel"></app-chart>
       </th>
     </ng-container>
 
     <ng-container matColumnDef="occupationLabel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      <th *matHeaderCellDef
+          mat-header-cell
+          mat-sort-header
+          sortActionDescription="Sort by occupation">
         Occupation
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.occupationLabel}} </td>
+      <td mat-cell *matCellDef="let element">
+        {{element.occupationLabel}}
+      </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="memberOfLabelD">
-      <th mat-header-cell *matHeaderCellDef>
-<!--        <app-chart></app-chart>-->
+    <!-- MemberOf Column -->
+    <ng-container matColumnDef="memberOfLabelChart">
+      <th *matHeaderCellDef
+          mat-header-cell>
+        <app-chart *ngIf="data.items?.length"
+                   [data]="data.items || []"
+                   field="memberOfLabel"></app-chart>
       </th>
     </ng-container>
 
     <ng-container matColumnDef="memberOfLabel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      <th *matHeaderCellDef
+          mat-header-cell
+          mat-sort-header
+          sortActionDescription="Sort by memberOf">
         Member Of
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.memberOfLabel}} </td>
+      <td *matCellDef="let element"
+          mat-cell>
+        {{element.memberOfLabel}}
+      </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="creatorLabelD">
-      <th mat-header-cell *matHeaderCellDef>
-<!--        <app-chart></app-chart>-->
+    <!-- Creator Column -->
+    <ng-container matColumnDef="creatorLabelChart">
+      <th *matHeaderCellDef
+          mat-header-cell>
+        <app-chart *ngIf="data.items?.length"
+                   [data]="data.items || []"
+                   field="creatorLabel"></app-chart>
       </th>
     </ng-container>
 
     <ng-container matColumnDef="creatorLabel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      <th *matHeaderCellDef
+          mat-header-cell
+          mat-sort-header
+          sortActionDescription="Sort by creator">
         Creator
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.creatorLabel}} </td>
+      <td mat-cell *matCellDef="let element">
+        {{element.creatorLabel}}
+      </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="actionsD">
-      <th mat-header-cell *matHeaderCellDef></th>
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actionsChart">
+      <th *matHeaderCellDef
+          mat-header-cell></th>
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>
+      <th *matHeaderCellDef
+          mat-header-cell>
         Actions
       </th>
-      <td mat-cell *matCellDef="let element">
+      <td *matCellDef="let element"
+          mat-cell>
         <button mat-icon-button
                 color="primary"
-                aria-label="Example icon button with a home icon"
+                aria-label="edit"
                 (click)="onEdit($event, element)">
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button
                 color="accent"
-                aria-label="Example icon button with a menu icon"
+                aria-label="delete"
                 (click)="onDelete($event, element)">
           <mat-icon>delete</mat-icon>
         </button>
@@ -203,12 +206,12 @@ sort: data$ | async
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-header-row *matHeaderRowDef="displayedColumnsD"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsChart"></tr>
 
-    <tr mat-row
-        *matRowDef="let row; columns: displayedColumns;"
+    <tr *matRowDef="let row; columns: displayedColumns;"
+        mat-row
         class="cursor-pointer"
-        (click)="showDetails(row)"
-    ></tr>
+        (click)="showDetails(row)">
+    </tr>
   </table>
 </ng-container>

@@ -10,7 +10,7 @@ export class HeroService {
 
   data$: Observable<HeroInterface[]> = this._data.asObservable();
 
-  private URL = '../assets/query1.json';
+  private URL = '../assets/query.json';
   private data: HeroInterface[] = [];
 
   constructor(private http: HttpClient) {

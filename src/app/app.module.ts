@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlertComponent } from './components/alert/alert.component';
 import { HeroService } from './services/hero.service';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HeroService } from './services/hero.service';
     MatButtonModule,
     HttpClientModule,
     MatDialogModule,
+    MatListModule,
   ],
   providers: [
     HeroService,

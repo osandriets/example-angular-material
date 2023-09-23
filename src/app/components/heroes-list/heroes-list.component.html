@@ -1,7 +1,14 @@
 <ng-container *ngIf="{
   items: data$ | async,
-  sort: data$ | async
+  heroData: heroData$ | async,
+  sort: sort$ | async,
+  search: search$ | async
 } as data">
+
+  <app-hero-search [search]="data.search || []"
+                   [options]="getNames(data.heroData)"
+                   (setSearch)="setSearch($event)">
+  </app-hero-search>
 
   <div class="mb-24">
     <button mat-raised-button
@@ -23,7 +30,7 @@
     <ng-container matColumnDef="nameLabelChart">
       <th *matHeaderCellDef
           mat-header-cell>
-        <app-chart *ngIf="data.items?.length"
+        <app-chart *ngIf="data && data.items?.length"
                    [data]="data.items || []"
                    field="nameLabel"></app-chart>
       </th>

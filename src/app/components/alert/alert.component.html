@@ -1,11 +1,21 @@
-<h1 mat-dialog-title>Do you want delete?</h1>
-<div mat-dialog-actions>
+<h1 mat-dialog-title>Do you want delete this hero?</h1>
+<div mat-dialog-content>
+    <p><b>Name:</b> {{data.nameLabel}}</p>
+    <p><b>Gender:</b> {{data.genderLabel}}</p>
+    <p><b>Citizenship:</b> {{data.citizenshipLabel}}</p>
+    <p><b>Skills:</b> {{data.skillsLabel}}</p>
+    <p><b>Occupation:</b> {{data.occupationLabel}}</p>
+    <p><b>MemberOf:</b> {{data.memberOfLabel}}</p>
+    <p><b>Creator:</b> {{data.creatorLabel}}</p>
+</div>
+<mat-dialog-actions align="end">
   <button mat-button
           cdkFocusInitial
           (click)="onNoClick()">Close
   </button>
-  <button mat-button
+  <button mat-flat-button
+          color="warn"
           (click)="onClick(data)">
     Delete
   </button>
-</div>
+</mat-dialog-actions>

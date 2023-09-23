@@ -1,5 +1,6 @@
-<h1 mat-dialog-title>Details</h1>
-<div mat-dialog-content>
+<h1 mat-dialog-title>Hero details</h1>
+
+<mat-dialog-content>
   <mat-list>
     <mat-list-item><b>Name:</b> {{data.nameLabel}}</mat-list-item>
     <mat-list-item><b>Gender:</b> {{data.genderLabel}}</mat-list-item>
@@ -9,10 +10,10 @@
     <mat-list-item><b>MemberOf:</b> {{data.memberOfLabel}}</mat-list-item>
     <mat-list-item><b>Creator:</b> {{data.creatorLabel}}</mat-list-item>
   </mat-list>
-</div>
-<div mat-dialog-actions>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
   <button mat-button
           cdkFocusInitial
           (click)="onNoClick()">Close</button>
-<!--  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>-->
-</div>
+</mat-dialog-actions>

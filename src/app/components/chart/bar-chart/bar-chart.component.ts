@@ -19,10 +19,23 @@ export class BarChartComponent<EntityType = ChartInterface> implements AfterView
 
   @Input() xValue = 'x';
   @Input() yValue = 'y';
-  @Input() data: EntityType[] = [];
   @Input() barWidth!: number;
   @Input() paddingInner = 0.1;
   @Input() paddingOuter = 0.1;
+
+  private _data: EntityType[] = [];
+
+  @Input() get data(): EntityType[] {
+    return this._data;
+  }
+
+  set data(v: EntityType[]) {
+    this._data = v;
+
+    if(this.svgContainer?.nativeElement) {
+      this._render();
+    }
+  }
 
   @ViewChild('svgContainer', { static: false, read: ElementRef }) svgContainer!: ElementRef<HTMLDivElement>;
 

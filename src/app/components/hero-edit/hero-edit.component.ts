@@ -45,12 +45,17 @@ export class HeroEditComponent {
   }
 
   onSave(): void {
-    if(this.data.uuid) {
-      this.heroService.edit(this.form.value);
+    if(this.form.valid){
+      if(this.data.uuid) {
+        this.heroService.edit(this.form.value);
+      } else {
+        this.heroService.add(this.form.value);
+      }
+
+      this.dialogRef.close(this.form.value);
     } else {
-      this.heroService.add(this.form.value);
+      this.form.markAllAsTouched();
     }
 
-    this.dialogRef.close(this.form.value);
   }
 }

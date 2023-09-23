@@ -14,6 +14,7 @@ import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { ChartModule } from '../chart/chart.module';
 import { HeroInterface } from '../../interfaces/hero.interface';
+import { HeroSearchComponent } from '../hero-search/hero-search.component';
 
 @Component({
   selector: 'app-heroes-list',
@@ -21,23 +22,29 @@ import { HeroInterface } from '../../interfaces/hero.interface';
   styleUrls: ['./heroes-list.component.scss'],
   standalone: true,
   imports: [
-    MatTableModule, MatSortModule, MatChipsModule, MatButtonModule,
-    MatIconModule, NgIf, AsyncPipe, JsonPipe, MatInputModule, ChartModule,
+    MatTableModule, MatSortModule, MatChipsModule, MatButtonModule, MatIconModule,
+    NgIf, AsyncPipe, JsonPipe, MatInputModule, ChartModule, HeroSearchComponent,
   ],
 })
 export class HeroesListComponent implements OnInit{
   data$!: Observable<HeroInterface[]>;
+  heroData$!: Observable<HeroInterface[]>;
+
   displayedColumns: string[] = [
     'nameLabel', 'genderLabel', 'citizenshipLabel', 'skillsLabel',
     'occupationLabel', 'memberOfLabel', 'creatorLabel', 'actions'];
   displayedColumnsChart: string[] = [
     'nameLabelChart', 'genderLabelChart', 'citizenshipLabelChart', 'skillsLabelChart',
     'occupationLabelChart', 'memberOfLabelChart', 'creatorLabelChart', 'actionsChart'];
+
   matSortActive = 'nameLabel';
   matSortDirection: SortDirection = 'asc';
 
   private _sort: Subject<any> = new BehaviorSubject({ active: 'nameLabel', direction: 'asc' });
   sort$: Observable<any> = this._sort.asObservable();
+
+  private _search: Subject<any> = new BehaviorSubject([]);
+  search$: Observable<string[]> = this._search.asObservable();
 
   @ViewChild(MatTable) table!: MatTable<HeroInterface>;
 
@@ -49,14 +56,17 @@ export class HeroesListComponent implements OnInit{
   ngOnInit(): void {
     this.heroService.load();
 
-    this.data$ = combineLatest(
-      this.heroService.data$,
-      this.sort$,
-    ).pipe(
-      map(([data, sort]) => {
-        // console.log('data/sort', data, sort);
+    this.heroData$ = this.heroService.data$;
 
-        return data.sort((a: any, b: any) => {
+    this.data$ = combineLatest(
+      this.heroData$,
+      this.sort$,
+      this.search$,
+    ).pipe(
+      map(([data, sort, search]) => {
+        return data
+          .filter(d => !search.length || search.includes(d.nameLabel))
+          .sort((a: any, b: any) => {
           return sort.direction === 'asc'
             ? a[sort.active].localeCompare(b[sort.active])
             : b[sort.active].localeCompare(a[sort.active]);
@@ -65,7 +75,6 @@ export class HeroesListComponent implements OnInit{
     );
 
     this.data$.subscribe(() => {
-      // this.dataSource = new MatTableDataSource(i);
       this.table?.renderRows();
     });
   }
@@ -83,23 +92,14 @@ export class HeroesListComponent implements OnInit{
   onEdit(event: any, element = {}): void {
     event.stopPropagation();
 
-    // console.error('onEdit', element);
-    const dialogRef = this.dialog.open(HeroEditComponent, {
+    this.dialog.open(HeroEditComponent, {
       data: element,
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      // console.log('onEdit The dialog was closed');
-      // this.animal = result;
+      width: '600px',
     });
   }
 
   onDelete(event: any, element: any): void {
     event.stopPropagation();
-
-    // console.error('onDelete', element);
-
-    // console.error('element', element);
 
     const dialogRef = this.dialog.open(AlertComponent, {
       data: element,
@@ -112,7 +112,15 @@ export class HeroesListComponent implements OnInit{
     });
   }
 
-  applyFilter(event: KeyboardEvent) {
-    console.log('applyFilter', event);
+  getNames(items: HeroInterface[] | null): string[]  {
+    if(!items){
+      return [];
+    }
+
+    return Array.from(new Set([ ...items && items.map(i => i.nameLabel) ]));
+  }
+
+  setSearch(event: string[]): void {
+    this._search.next(event);
   }
 }

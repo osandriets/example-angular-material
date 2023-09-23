@@ -1,6 +1,9 @@
 <!--{{sortedData() | async | json}}-->
 <!--<app-chart></app-chart>-->
 
+
+<!--<app-pie-chart></app-pie-chart>-->
+
 <ng-container *ngIf="{
 items: data$ | async,
 sort: data$ | async
@@ -35,7 +38,21 @@ sort: data$ | async
 
     <!-- Position Column -->
     <ng-container matColumnDef="nameLabelD">
-      <th mat-header-cell *matHeaderCellDef> Name of the item purchased </th>
+      <th mat-header-cell *matHeaderCellDef>
+        <app-bar-chart [data]="[
+            {
+      id: 1,
+      x: '1 Minute Ago',
+      y: 1
+    },
+    {
+      id: 2,
+      x: '5 Minute Ago',
+      y: 20
+    }
+        ]"
+        ></app-bar-chart>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="nameLabel">
@@ -49,7 +66,19 @@ sort: data$ | async
     <!-- Name Column -->
     <ng-container matColumnDef="genderLabelD">
       <th mat-header-cell *matHeaderCellDef>
-        <app-chart></app-chart>
+<!--        <app-chart [data]="data"-->
+<!--                   field="genderLabelD"></app-chart>-->
+          <app-bar-chart [data]="[
+            {
+      x: '1 Minute Ago',
+      y: 7
+    },
+    {
+      x: '5 Minute Ago',
+      y: 3
+    }
+        ]"
+          ></app-bar-chart>
       </th>
     </ng-container>
 
@@ -70,7 +99,18 @@ sort: data$ | async
     <!-- Weight Column -->
     <ng-container matColumnDef="citizenshipLabelD">
       <th mat-header-cell *matHeaderCellDef>
-        <app-chart></app-chart>
+<!--        <app-chart [data]="data"-->
+<!--                   field="citizenshipLabelD"></app-chart>-->
+          <app-pie-chart [data]="[
+            {
+      x: '1 Minute Ago',
+      y: 7
+    },
+    {
+      x: '5 Minute Ago',
+      y: 3
+    }
+        ]"></app-pie-chart>
       </th>
     </ng-container>
 
@@ -84,7 +124,7 @@ sort: data$ | async
     <!-- Symbol Column -->
     <ng-container matColumnDef="skillsLabelD">
       <th mat-header-cell *matHeaderCellDef>
-        <app-chart></app-chart>
+<!--        <app-chart></app-chart>-->
       </th>
     </ng-container>
 
@@ -98,7 +138,7 @@ sort: data$ | async
     <!-- Symbol Column -->
     <ng-container matColumnDef="occupationLabelD">
       <th mat-header-cell *matHeaderCellDef>
-        <app-chart></app-chart>
+<!--        <app-chart></app-chart>-->
       </th>
     </ng-container>
 
@@ -112,7 +152,7 @@ sort: data$ | async
     <!-- Symbol Column -->
     <ng-container matColumnDef="memberOfLabelD">
       <th mat-header-cell *matHeaderCellDef>
-        <app-chart></app-chart>
+<!--        <app-chart></app-chart>-->
       </th>
     </ng-container>
 
@@ -126,7 +166,7 @@ sort: data$ | async
     <!-- Symbol Column -->
     <ng-container matColumnDef="creatorLabelD">
       <th mat-header-cell *matHeaderCellDef>
-        <app-chart></app-chart>
+<!--        <app-chart></app-chart>-->
       </th>
     </ng-container>
 
@@ -139,7 +179,7 @@ sort: data$ | async
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="actionsD">
-      <th mat-header-cell *matHeaderCellDef> Name of the item purchased </th>
+      <th mat-header-cell *matHeaderCellDef></th>
     </ng-container>
 
     <ng-container matColumnDef="actions">

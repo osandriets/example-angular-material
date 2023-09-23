@@ -8,7 +8,7 @@ describe('BarChartComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BarChartComponent]
+      declarations: [BarChartComponent],
     });
     fixture = TestBed.createComponent(BarChartComponent);
     component = fixture.componentInstance;

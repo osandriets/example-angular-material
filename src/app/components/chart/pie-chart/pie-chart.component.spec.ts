@@ -8,7 +8,7 @@ describe('PieChartComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PieChartComponent]
+      declarations: [PieChartComponent],
     });
     fixture = TestBed.createComponent(PieChartComponent);
     component = fixture.componentInstance;

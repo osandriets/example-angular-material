@@ -1,19 +1,22 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
-import { MatButtonModule } from "@angular/material/button";
-import { MatListModule } from "@angular/material/list";
-import { HeroService } from "../../services/hero.service";
-import { HeroInterface } from "../../interfaces/hero.interface";
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { HeroService } from '../../services/hero.service';
+import { HeroInterface } from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'app-hero-edit',
   templateUrl: './hero-edit.component.html',
   styleUrls: ['./hero-edit.component.scss'],
   standalone: true,
-  imports: [MatDialogModule, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatListModule],
+  imports: [
+    MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatListModule,
+    FormsModule, ReactiveFormsModule,
+  ],
 })
 export class HeroEditComponent {
   form!: UntypedFormGroup;
@@ -41,17 +44,13 @@ export class HeroEditComponent {
     this.dialogRef.close();
   }
 
-  onSave() {
+  onSave(): void {
     if(this.data.uuid) {
-      console.log('+');
       this.heroService.edit(this.form.value);
     } else {
-      console.log('-');
-
       this.heroService.add(this.form.value);
     }
 
     this.dialogRef.close(this.form.value);
-    console.error('onSave', this.form.value)
   }
 }

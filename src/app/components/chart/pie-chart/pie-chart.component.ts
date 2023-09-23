@@ -1,18 +1,9 @@
 import { Component, Input, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-// import {
-//   scaleOrdinal as d3_scaleOrdinal
-// } from 'd3-scale';
-// import
-// {
-//   pie as d3_pie,
-//   arc as d3_arc,
-//   PieArcDatum
-// } from 'd3-shape';
 import * as d3 from 'd3';
-import { PieArcDatum } from "d3";
-import { ChartInterface } from "../../../interfaces/chart.interface";
+import { PieArcDatum } from 'd3';
+import { ChartInterface } from '../../../interfaces/chart.interface';
 
 export interface PieArcModel {
   path: string;
@@ -22,7 +13,7 @@ export interface PieArcModel {
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss']
+  styleUrls: ['./pie-chart.component.scss'],
 })
 export class PieChartComponent<EntityType = ChartInterface> implements AfterViewInit {
   private _updateLayout$ = new Subject<void>();
@@ -37,10 +28,10 @@ export class PieChartComponent<EntityType = ChartInterface> implements AfterView
   @Input() radius!: number;
   @Input() arcWidth = 40;
 
-  @ViewChild('svgContainer', {static: false, read: ElementRef}) svgContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('svgContainer', { static: false, read: ElementRef }) svgContainer!: ElementRef<HTMLDivElement>;
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  onResize(): void {
     this._updateLayout$.next();
   }
 
@@ -49,19 +40,20 @@ export class PieChartComponent<EntityType = ChartInterface> implements AfterView
       .pipe(debounceTime(1000))
       .subscribe(() => {
         this._render();
-      })
+      });
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this._updateLayout$.next();
   }
 
-  private _render() {
+  private _render(): void {
     this.width = this.svgContainer.nativeElement.offsetWidth;
     this.height = this.svgContainer.nativeElement.offsetHeight;
     const radius = this.radius || (Math.min(this.width, this.height) / 2);
 
-    const colorScale = d3.scaleOrdinal(["#287BA8", "#94bdd4", "#488fb5", "#0f4b7d", "#69a3c2"]);
+    const colorScale =
+      d3.scaleOrdinal(['#287BA8', '#94bdd4', '#488fb5', '#0f4b7d', '#69a3c2']);
 
     const pieLayout = d3.pie<EntityType>()
       .sort(null)
@@ -76,7 +68,7 @@ export class PieChartComponent<EntityType = ChartInterface> implements AfterView
     this.arcs = pies.map((pie: d3.PieArcDatum<EntityType>) => arcLayout(pie))
       .map((d, i) => ({
         path: d,
-        color: colorScale('' + i)
+        color: colorScale(`${i}`),
       }));
   }
 }

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from "rxjs";
+import { Observable, Subject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
-import { HeroInterface } from "../interfaces/hero.interface";
+import { HeroInterface } from '../interfaces/hero.interface';
 
 @Injectable()
 export class HeroService {
@@ -10,7 +10,7 @@ export class HeroService {
 
   data$: Observable<HeroInterface[]> = this._data.asObservable();
 
-  private URL = '../assets/query.json';
+  private URL = '../assets/query1.json';
   private data: HeroInterface[] = [];
 
   constructor(private http: HttpClient) {
@@ -22,7 +22,7 @@ export class HeroService {
         this.data = d.map(i => ({
           ...i,
           uuid: uuidv4(),
-        }))
+        }));
 
         this._data.next(this.data);
     });
@@ -34,7 +34,6 @@ export class HeroService {
   }
 
   add(result: HeroInterface): void {
-    console.error('add', result);
     this.data = [
       {
         ...result,

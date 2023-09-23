@@ -1,6 +1,6 @@
 [
   {
-    "nameLabel": "Ahab88",
+    "nameLabel": "Ahab",
     "genderLabel": "male",
     "citizenshipLabel": "United States of America",
     "skillsLabel": "superhuman strength",
@@ -9,12 +9,318 @@
     "creatorLabel": "Walt Simonson"
   },
   {
-    "nameLabel": "Ahab1",
+    "nameLabel": "Amanda Sefton",
     "genderLabel": "female",
     "citizenshipLabel": "United States of America",
     "skillsLabel": "superhuman durability",
     "occupationLabel": "psychologist",
     "memberOfLabel": "Horsemen of Apocalypse",
     "creatorLabel": "Walt Simonson"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "instructor",
+    "memberOfLabel": "Department H",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "healing factor",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Department H",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman strength",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Department H",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Department H",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman senses",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Department H",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Department H",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "healing factor",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Canadian Army",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman strength",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Canadian Army",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Canadian Army",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "healing factor",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman strength",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman senses",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "healing factor",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Avengers",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "female",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman strength",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Avengers",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "female",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Avengers",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman senses",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Avengers",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Avengers",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "healing factor",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Devil's Brigade",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Weapon X",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman senses",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Weapon X",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Weapon X",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bartender",
+    "memberOfLabel": "Department H",
+    "creatorLabel": "John Romita, Sr."
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "The Fantastic Four",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "healing factor",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman strength",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Alpha Flight",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman senses",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Weapon X",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Weapon X",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "healing factor",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Horsemen of Apocalypse",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman strength",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Horsemen of Apocalypse",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman agility / reflexes",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Horsemen of Apocalypse",
+    "creatorLabel": "Len Wein"
+  },
+  {
+    "nameLabel": "Wolverine",
+    "genderLabel": "male",
+    "citizenshipLabel": "Canada",
+    "skillsLabel": "superhuman longevity",
+    "occupationLabel": "bouncer",
+    "memberOfLabel": "Team X",
+    "creatorLabel": "Len Wein"
   }
 ]

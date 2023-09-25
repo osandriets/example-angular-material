@@ -29,7 +29,7 @@ export class HeroEditComponent {
   ) {
 
     this.form = this.fb.group({
-      uuid: [data.uuid ?? null, [Validators.required]],
+      uuid: [data.uuid ?? null],
       nameLabel: [data.nameLabel ?? '', [Validators.required]],
       genderLabel: [data.genderLabel ?? '', [Validators.required]],
       citizenshipLabel: [data.citizenshipLabel ?? '', [Validators.required]],
